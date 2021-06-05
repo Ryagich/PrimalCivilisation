@@ -38,15 +38,15 @@ namespace PrimalCivilisation
                                    && technologies.Points > 0;
                 }
             }
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
         }
 
-        private void ScienceMenu_Activated(object sender, EventArgs e)
+        private void ScienceMenuActivated(object sender, EventArgs e)
         {
             UpdateButtons(City.Technologies);
         }
 
-        private void TechnologieButton_Click(object sender, EventArgs e)
+        private void TechnologieButtonClick(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -56,21 +56,7 @@ namespace PrimalCivilisation
             UpdateButtons(City.Technologies);
         }
 
-        private void Food1_Click(object sender, EventArgs e)
-        {
-            var button = (Button)sender;
-            var splited = ((string)button.Tag).Split(';');
-            var type = (Technologies.TechnologieType)int.Parse(splited[0]);
-            City.Technologies.Learn(type);
-            UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 2);
-            UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
-            lbl_InfoTechnologie.Text = " эффективность добычи еды на человека возрастает вдвое" +
-                "\n максимум людей на локации + 10"  +
-                "\n пассивный прирост еды +2";
-        }
-
-        private void Food2_Click(object sender, EventArgs e)
+        private void Food1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -78,13 +64,27 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 3);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " эффективность добычи еды на человека возрастает вдвое" +
                 "\n максимум людей на локации + 10" +
                 "\n пассивный прирост еды +3";
         }
 
-        private void Food3_Click(object sender, EventArgs e)
+        private void Food2Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var splited = ((string)button.Tag).Split(';');
+            var type = (Technologies.TechnologieType)int.Parse(splited[0]);
+            City.Technologies.Learn(type);
+            UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 3);
+            UpdateButtons(City.Technologies);
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
+            lbl_InfoTechnologie.Text = " эффективность добычи еды на человека возрастает вдвое" +
+                "\n максимум людей на локации + 10" +
+                "\n пассивный прирост еды +3";
+        }
+
+        private void Food3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -92,13 +92,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 4);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " эффективность добычи еды на человека возрастает вдвое" +
                 "\n максимум людей на локации + 10" +
                 "\n пассивный прирост еды +4";
         }
 
-        private void Food4_Click(object sender, EventArgs e)
+        private void Food4Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -106,13 +106,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 5);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " эффективность добычи еды на человека возрастает вдвое" +
                 "\n максимум людей на локации + 10" +
                 "\n пассивный прирост еды +5";
         }
 
-        private void Food5_Click(object sender, EventArgs e)
+        private void Food5Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -120,13 +120,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 6);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " эффективность возрастает на 100%" +
                 "\n максимум людей на локации + 10" +
                 "\n пассивный прирост еды +6";
         }
 
-        private void Wood1_Click(object sender, EventArgs e)
+        private void Wood1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -134,13 +134,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 20, 1.5, 10, 2);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10." +
                 " Эффективность возрастает на 50%" +
                 "\n максимум древесины +20. Пассивный прирост древесины +2";
         }
 
-        private void Wood2_Click(object sender, EventArgs e)
+        private void Wood2Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -148,13 +148,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 0, 1.5, 10, 3);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10." +
                 " Эффективность возрастает на 50%" +
                 "\n максимум древесины +20. Пассивный прирост древесины +3";
         }
 
-        private void Wood3_Click(object sender, EventArgs e)
+        private void Wood3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -162,13 +162,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 0, 1.5, 10, 4);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10." +
                 " Эффективность возрастает на 50%" +
                 "\n максимум древесины +20. Пассивный прирост древесины +4";
         }
 
-        private void Wood4_Click(object sender, EventArgs e)
+        private void Wood4Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -176,13 +176,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 0, 1.5, 10, 5);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10. " +
                 "Эффективность возрастает на 50%" +
                 "\n максимум древесины +20. Пассивный прирост древесины +5";
         }
 
-        private void Wood5_Click(object sender, EventArgs e)
+        private void Wood5Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -190,13 +190,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 0, 1.5, 10, 6);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10. " +
                 "Эффективность возрастает на 50%" +
                 "\n максимум древесины +20. Пассивный прирост древесины +6";
         }
 
-        private void Stone1_Click(object sender, EventArgs e)
+        private void Stone1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -204,13 +204,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 10, 1.5, 10, 2);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10." +
                 " Эффективность возрастает на 50%" +
                 "\n максимум камня +10. Пассивный прирост камня +2";
         }
 
-        private void Stone2_Click(object sender, EventArgs e)
+        private void Stone2Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -218,13 +218,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 10, 1.5, 10, 2);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10. " +
                 "Эффективность возрастает на 50%" +
                 "\n максимум камня +10. Пассивный прирост камня +2";
         }
 
-        private void Stone3_Click(object sender, EventArgs e)
+        private void Stone3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -232,13 +232,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 10, 1.5, 10, 2);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10. " +
                 "Эффективность возрастает на 50%" +
                 "\n максимум камня +10. Пассивный прирост камня +2";
         }
 
-        private void Stone4_Click(object sender, EventArgs e)
+        private void Stone4Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -246,13 +246,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 10, 1.5, 10, 2);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10. " +
                 "Эффективность возрастает на 50%" +
                 "\n максимум камня +10. Пассивный прирост камня +2";
         }
 
-        private void Stone5_Click(object sender, EventArgs e)
+        private void Stone5Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -260,13 +260,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 10, 1.5, 10, 2);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Максимум людей на локации +10. " +
                 "Эффективность возрастает на 50%" +
                 "\n максимум камня +10. Пассивный прирост камня +2";
         }
 
-        private void Science1_Click(object sender, EventArgs e)
+        private void Science1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -274,13 +274,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 1.5, 5, 3);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Эффективность возрастает на 50%" +
                 "\n Максимум людей на локации +5. " +
                 "\n Пассивный прирост науки +3";
         }
 
-        private void Science2_Click(object sender, EventArgs e)
+        private void Science2Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -288,13 +288,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 1.5, 5, 3);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Эффективность возрастает на 50%" +
                 "\n Максимум людей на локации +5." +
                 "\n Пассивный прирост науки +3";
         }
 
-        private void Science3_Click(object sender, EventArgs e)
+        private void Science3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -302,13 +302,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 1.5, 5, 3);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Эффективность возрастает на 50%" +
                 "\n максимум людей на локации +5." +
                 "\n Пассивный прирост науки +3";
         }
 
-        private void Science4_Click(object sender, EventArgs e)
+        private void Science4Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -316,13 +316,13 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 1.5, 5, 3);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Эффективность возрастает на 50%" +
                 "\n максимум людей на локации +5." +
                 "\n Пассивный прирост науки +3";
         }
 
-        private void Science5_Click(object sender, EventArgs e)
+        private void Science5Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -330,7 +330,7 @@ namespace PrimalCivilisation
             City.Technologies.Learn(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 1.5, 5, 3);
             UpdateButtons(City.Technologies);
-            lbl_TechnologiePoints.Text = $"{City.Technologies.Points}";
+            LabelTechnologiePoints.Text = $"{City.Technologies.Points}";
             lbl_InfoTechnologie.Text = " Эффективность возрастает на 50%" +
                 "\n максимум людей на локации +5. " +
                 "\n Пассивный прирост науки +3";

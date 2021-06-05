@@ -21,17 +21,17 @@ namespace PrimalCivilisation
             Turn = 1;
             City = new GameCity();
             ScienceMenu = new ScienceMenu(City);
-            BuildingMenu = new BuildingsMenu(City); 
+            BuildingMenu = new BuildingsMenu(City);
 
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1Load(object sender, EventArgs e)
         {
             UpdateLabels();
         }
 
-        private void bt_MinusFood_Click(object sender, EventArgs e)
+        private void ButtonMinusFoodClick(object sender, EventArgs e)
         {
             if (City.FoodLocation.PeopleValue > 0)
             {
@@ -41,7 +41,7 @@ namespace PrimalCivilisation
             }
         }
 
-        private void bt_AddFood_Click(object sender, EventArgs e)
+        private void ButtonAddFoodClick(object sender, EventArgs e)
         {
             if (City.FoodLocation.PeopleValue < City.FoodLocation.PeopleMax
                 && City.People.FreePeople > 0)
@@ -52,7 +52,7 @@ namespace PrimalCivilisation
             }
         }
 
-        private void bt_minusWood_Click(object sender, EventArgs e)
+        private void ButtonMinusWoodClick(object sender, EventArgs e)
         {
             if (City.WoodLocation.PeopleValue > 0)
             {
@@ -62,7 +62,7 @@ namespace PrimalCivilisation
             }
         }
 
-        private void bt_AddWood_Click(object sender, EventArgs e)
+        private void ButtonAddWoodClick(object sender, EventArgs e)
         {
             if (City.WoodLocation.PeopleValue < City.WoodLocation.PeopleMax
                 && City.People.FreePeople > 0)
@@ -73,7 +73,7 @@ namespace PrimalCivilisation
             }
         }
 
-        private void bt_minusQuarry_Click(object sender, EventArgs e)
+        private void ButtonMinusQuarryClick(object sender, EventArgs e)
         {
             if (City.StoneLocation.PeopleValue > 0)
             {
@@ -83,7 +83,7 @@ namespace PrimalCivilisation
             }
         }
 
-        private void bt_AddQuarry_Click(object sender, EventArgs e)
+        private void ButtonAddQuarryClick(object sender, EventArgs e)
         {
             if (City.StoneLocation.PeopleValue < City.StoneLocation.PeopleMax
                 && City.People.FreePeople > 0)
@@ -94,7 +94,7 @@ namespace PrimalCivilisation
             }
         }
 
-        private void bt_minusShrine_Click(object sender, EventArgs e)
+        private void ButtonMinusShrineClick(object sender, EventArgs e)
         {
             if (City.LocationScience.PeopleValue > 0)
             {
@@ -104,7 +104,7 @@ namespace PrimalCivilisation
             }
         }
 
-        private void bt_AddShrine_Click(object sender, EventArgs e)
+        private void ButtonAddShrineClick(object sender, EventArgs e)
         {
             if (City.LocationScience.PeopleValue < City.LocationScience.PeopleMax
                 && City.People.FreePeople > 0)
@@ -117,35 +117,35 @@ namespace PrimalCivilisation
 
         public void UpdateLabels()
         {
-            lbl_HuntingValue.Text = $"{City.FoodLocation.PeopleValue} / {City.FoodLocation.PeopleMax}";
-            lbl_FoodInfo.Text = $"{City.Food.Value:F1} / {City.Food.Max:F1}";
+            LabelHuntingValue.Text = $"{City.FoodLocation.PeopleValue} / {City.FoodLocation.PeopleMax}";
+            LabelFoodInfo.Text = $"{City.Food.Value:F1} / {City.Food.Max:F1}";
             City.FoodLocation.UpdateIncome((int)City.People.Count);
-            lbl_FoodAdd.Text = $"{City.FoodLocation.GetIncome():F1}";
+            LabelFoodAdd.Text = $"{City.FoodLocation.GetIncome():F1}";
 
-            lbl_WoodValue.Text = $"{City.WoodLocation.PeopleValue} / {City.WoodLocation.PeopleMax}";
-            lbl_WoodInfo.Text = $"{City.Wood.Value:F1} / {City.Wood.Max:F1}";
-            lbl_WoodAdd.Text = $"+ {City.WoodLocation.GetIncome():F1}";
+            LabelWoodValue.Text = $"{City.WoodLocation.PeopleValue} / {City.WoodLocation.PeopleMax}";
+            LabelWoodInfo.Text = $"{City.Wood.Value:F1} / {City.Wood.Max:F1}";
+            LabelWoodAdd.Text = $"+ {City.WoodLocation.GetIncome():F1}";
 
-            lbl_ShrineValue.Text = $"{City.LocationScience.PeopleValue} / {City.LocationScience.PeopleMax}";
-            lbl_ScienceInfo.Text = $"{City.Science.Value:F1} / {City.Science.Max:F1}";
-            lbl_ScienceAdd.Text = $"+{City.LocationScience.GetIncome():F1}";
+            LabelShrineValue.Text = $"{City.LocationScience.PeopleValue} / {City.LocationScience.PeopleMax}";
+            LabelScienceInfo.Text = $"{City.Science.Value:F1} / {City.Science.Max:F1}";
+            LabelScienceAdd.Text = $"+{City.LocationScience.GetIncome():F1}";
 
-            lbl_QuarryValue.Text = $"{City.StoneLocation.PeopleValue} / {City.StoneLocation.PeopleMax}";
-            lbl_StoneInfo.Text = $"{City.Stone.Value:F1} / {City.Stone.Max:F1}";
-            lbl_StoneAdd.Text = $"+{City.StoneLocation.GetIncome():F1}";
+            LabelQuarryValue.Text = $"{City.StoneLocation.PeopleValue} / {City.StoneLocation.PeopleMax}";
+            LabelStoneInfo.Text = $"{City.Stone.Value:F1} / {City.Stone.Max:F1}";
+            LabelStoneAdd.Text = $"+{City.StoneLocation.GetIncome():F1}";
 
-            lbl_Population.Text = $"{City.People.FreePeople} / {City.People.Count}";
+            LabelPopulation.Text = $"{City.People.FreePeople} / {City.People.Count}";
 
-            lbl_Wood.Text = $"Wood ({City.Buildings.WoodPoints})";
-            lbl_Stone.Text = $"Stone ({City.Buildings.StonePoints})";
-            lbl_Science.Text = $"Science ({City.Technologies.Points})";
+            LabeWood.Text = $"Wood ({City.Buildings.WoodPoints})";
+            LabeStone.Text = $"Stone ({City.Buildings.StonePoints})";
+            LabeScience.Text = $"Science ({City.Technologies.Points})";
 
-           lbl_Danger.Text = $"{City.Enemy.GetDanger(Turn):F2}%";
+            LabelDanger.Text = $"{City.Enemy.GetDanger(Turn):F2}%";
         }
 
-        private void bt_Turn_Click(object sender, EventArgs e)
+        private void ButtonTurnClick(object sender, EventArgs e)
         {
-            lbl_Turn.Text = Turn.ToString();
+            LabelTurn.Text = Turn.ToString();
             Turn++;
             City.Update();
             City.Technologies.UpdateSciencePoints();
@@ -157,7 +157,7 @@ namespace PrimalCivilisation
             City.CheckPeople();
         }
 
-        private void bt_Technologies_Click(object sender, EventArgs e)
+        private void ButtonTechnologiesClick(object sender, EventArgs e)
         {
             ScienceMenu.Top = Top;
             ScienceMenu.Left = Left;
@@ -170,7 +170,7 @@ namespace PrimalCivilisation
             UpdateLabels();
         }
 
-        private void bt_buildung_Click(object sender, EventArgs e)
+        private void ButtonBuildungClick(object sender, EventArgs e)
         {
             BuildingMenu.Top = Top;
             BuildingMenu.Left = Left;

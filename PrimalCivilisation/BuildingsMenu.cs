@@ -34,9 +34,9 @@ namespace PrimalCivilisation
                                   && building.WoodPoints > 0 && building.StonePoints > 0;
                 }
             }
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
-        private void BuildingMenu_Activated(object sender, EventArgs e)
+        private void BuildingMenuActivated(object sender, EventArgs e)
         {
             UpdateButtons(City.Buildings);
         }
@@ -67,7 +67,7 @@ namespace PrimalCivilisation
             locationScience.PassiveIncome += passiveIncomeAdd;
         }
 
-        private void bt_farm1_Click(object sender, EventArgs e)
+        private void ButtonFarm1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -75,10 +75,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_farm2_Click(object sender, EventArgs e)
+        private void ButtonFarm2Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -86,10 +86,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_farm3_Click(object sender, EventArgs e)
+        private void ButtonFarm3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -97,10 +97,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocationFood(City.FoodLocation, City.Food, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Sawmill1_Click(object sender, EventArgs e)
+        private void ButtonSawmill1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -108,10 +108,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Sawmill2_Click(object sender, EventArgs e)
+        private void ButtonSawmill2Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -119,10 +119,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Sawmill3_Click(object sender, EventArgs e)
+        private void ButtonSawmill3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -130,10 +130,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocation(City.WoodLocation, City.Wood, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Mine1_Click(object sender, EventArgs e)
+        private void ButtonMine1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -141,10 +141,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Mine2_Click(object sender, EventArgs e)
+        private void ButtonMine2Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -152,10 +152,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Mine3_Click(object sender, EventArgs e)
+        private void ButtonMine3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -163,10 +163,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocation(City.StoneLocation, City.Stone, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Shrine_Click(object sender, EventArgs e)
+        private void ButtonShrine1Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -174,10 +174,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Shrine2_Click(object sender, EventArgs e)
+        private void ButtonShrine2Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -185,10 +185,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void bt_Shrine3_Click(object sender, EventArgs e)
+        private void ButtonShrine3Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var splited = ((string)button.Tag).Split(';');
@@ -196,10 +196,10 @@ namespace PrimalCivilisation
             City.Buildings.Build(type);
             UpdateStateLocationScience(City.LocationScience, City.Science, 0, 2, 10, 2);
             UpdateButtons(City.Buildings);
-            lbl_BuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
+            LabelBuildingPoints.Text = $"{City.Buildings.WoodPoints} / {City.Buildings.StonePoints}";
         }
 
-        private void BuildingsMenu_Load(object sender, EventArgs e)
+        private void BuildingsMenuLoad(object sender, EventArgs e)
         {
             UpdateButtons(City.Buildings);
         }
